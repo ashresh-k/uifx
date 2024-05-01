@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>webpage</title>
+        <meta name="viewport" content="width=devive-width,initial-scale=1.0">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                list-style: none;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                background-color: rgb(200, 226, 255);
+            }
+            nav{
+                background:rgb(0, 0, 131);
+                height: 80px;
+                width: 100%;
+            } 
+            label.logo{
+                font-size: 35px;
+                color: rgb(255, 255, 255);
+                padding: 0 100px;
+                line-height: 80px;
+                font-weight: bold;
+            }
+            nav ul{
+                float:right;
+                margin-right: 20px;
+            }
+            nav ul li{
+                display: inline-block;
+                line-height: 80px;
+                padding: 0 5px;
+            }
+            nav ul li a{
+                color: rgb(255, 255, 255);
+                font-size: 20px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            a:hover{
+                background-color: #212fab;;
+                transition: .5s;
+            }
+            .checkbtn{
+              float: left;
+              font-size: 30px;
+              color: rgb(255, 255, 255);
+              margin-left: 40px;
+              line-height: 80px;
+              cursor: pointer;
+              display: none;
+            }
+            #check{
+               display: none;
+            }
+            @media (max-width:952px){
+                label.logo{
+                    font-size: 30px;
+                    padding-left: 50px;
+                }
+                nav ul li a{
+                    font-size: 16px;
+                }
+            }
+            @media (max-width:858px){
+                   .checkbtn{
+                      display: block;
+            } 
+        
+            ul{
+                position: fixed;
+                width: 50%;
+                height: 100vh;
+                background:#2c3e50;
+                top:80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+             nav a:hover{
+                background: none;
+                color:  #0014ac;
+            }
+            
+            #check:checked ~ ul {
+                left: 0px;
+            } 
+        } 
+           
+       .card{ 
+            width: 400px;
+            height:450px;
+            border-radius:50px;
+            background-color: rgb(174, 197, 251);
+            border: 0ch;
+            outline: 0ch;
+            margin-top: 50px;
+            margin-left: 120px;
+        }
+        .card h1{
+            font-size: 30px;
+            text-align: center;
+            padding: 25px 25px; 
+            color: aliceblue;
+        }
+        .card h1 a:hover{
+            background: none;
+        }
+        .card h1 a{
+            color: rgb(0, 136, 255);
+        }
+        .contact-container{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .contact-left{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+        .contact-left-title h2{
+            font-weight: 600;
+            color: #002aff;
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+     .contact-left-title hr{
+         border: none;
+         width: 120px;
+         height: 5px;
+         background-color: #002aff;
+         border-radius: 10px;
+         margin-bottom: 20px;
+     }
+     .contact-inputs{
+         width: 400px;
+         height: 50px;
+         border: none;
+         outline: none;
+         padding-left: 25px;
+         font-weight: 500;
+         color: rgb(0, 0, 0);
+         border-radius: 50px;
+     }
+     .contact-left textarea{
+         height: 140px;
+         padding-top: 15px;
+         border-radius: 20px;
+       }
+        .contact-left:focus{
+            border:2px solid #002aff;
+        }
+        .contact-inputs::placeholder{
+            color: #002aff;
+        }
+        .contact-left button{
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: azure;
+            gap: 10px;
+            border:none;
+            border-radius: 50px;
+            background-color:#002aff;
+        } 
+       
+    </style>
+    </head>
+    <body>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">&#9776;</label>
+            <label class="logo">UI Fx</label>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="contact.html">Contact </a></li>
+                <li><a href="Feedback(1).html">Feedback</a></li>
+            </ul>
+        </nav>
+           <div class="contact-container">
+               <form action="https://api.web3forms.com/submit" method="post"  class="contact-left">
+                  <div class="contact-left-title">
+                      <h2>Get in touch</h2>
+                      <hr>
+                  </div>
+                  <input type="hidden" name="access_key" value="9ccaa136-247f-494a-93a5-7f361ae65610">
+                  <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                  <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                  <textarea name="message" placeholder="Your Message" class="contact-inputs" required ></textarea>
+                  <button type="submit">submit</button>
+               </form>
+               <div class="contact-right">
+            </div>
+           </div>
+           <div class="card">
+            <h1>Instagram<br><a href="https://www.intagram.com/a._.kz6/">click here</a><img src="pngtree-instagram-icon-instagram-logo-png-image_3584853.png"></h1>
+           </div>
+    </body>
+    </html>
